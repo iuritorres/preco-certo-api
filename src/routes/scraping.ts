@@ -1,7 +1,7 @@
 import { Router } from 'express';
-import { productScrapingFactory } from '../factories/ProductScrapingFactory.js';
+import { scrapingFactory } from '../factories/scrapingFactory.ts';
 
-const controller = await productScrapingFactory.initialize();
+const controller = await scrapingFactory.initialize();
 export const scrapingRouter = Router();
 
 scrapingRouter.get('/hello', controller.helloWorld.bind(controller));

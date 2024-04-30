@@ -3,13 +3,14 @@
 	"version": "1.0.0",
 	"description": "API oficial da Preço Certo, aplicação que te ajuda a economizar comparando preços nas principais lojas do Brasil! 😉",
 	"type": "module",
-	"main": "build/server.js",
+	"main": "dist/server.js",
 	"scripts": {
+		"postinstall": "npm run prepare",
+		"prepare": "husky",
 		"dev:ts": "tsc -w",
 		"dev:js": "nodemon --env-file=.development.env",
 		"dev": "concurrently npm:dev:*",
-		"start": "node --env-file=.production.env build/server.js",
-		"prepare": "husky"
+		"start": "node --env-file=.production.env dist/server.js"
 	},
 	"keywords": [],
 	"author": "Iuri Torres - https://github.com/iuritorres",
