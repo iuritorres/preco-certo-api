@@ -2,6 +2,10 @@
 	"name": "preco-certo-api",
 	"version": "1.0.0",
 	"description": "API oficial da Preço Certo, aplicação que te ajuda a economizar comparando preços nas principais lojas do Brasil! 😉",
+	"keywords": [],
+	"author": "Iuri Torres - https://github.com/iuritorres",
+	"license": "UNLICENSED",
+	"private": true,
 	"type": "module",
 	"main": "dist/server.js",
 	"scripts": {
@@ -10,13 +14,11 @@
 		"dev:ts": "tsc -w",
 		"dev:js": "nodemon --env-file=.development.env",
 		"dev": "concurrently npm:dev:*",
-		"start": "node --env-file=.production.env dist/server.js"
+		"start": "node --env-file=.production.env"
 	},
-	"keywords": [],
-	"author": "Iuri Torres - https://github.com/iuritorres",
-	"license": "ISC",
 	"dependencies": {
-		"express": "^4.19.2"
+		"express": "^4.19.2",
+		"puppeteer": "^22.7.1"
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.1.1",
@@ -27,6 +29,7 @@
 		"husky": "^9.0.11",
 		"lint-staged": "^15.2.2",
 		"nodemon": "^3.1.0",
+		"ts-node": "^10.9.2",
 		"typescript": "^5.4.5",
 		"typescript-eslint": "^7.7.1"
 	}
