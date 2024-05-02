@@ -8,15 +8,19 @@ export class ScrapingService implements ScrapingServiceInterface {
 		this.scrapers = scrapers;
 	}
 
-	async searchProduct(product: Product): Promise<Array<Product>> {
-		const products: Product[] = [];
+	async searchProduct(productData: { name: string }): Promise<Array<Product>> {
+		try {
+			const products: Product[] = await Promise.all(
+				this.scrapers.map(
+					async (scraper) => await scraper.searchProduct(productData),
+				),
+			);
 
-		this.scrapers.forEach(async (scraper) => {
-			const returnedProduct = await scraper.searchProduct(product);
-
-			if (returnedProduct) products.push(returnedProduct);
-		});
-
-		return products;
+			const notNullProducts = products.filter((product) => product !== null);
+			return notNullProducts;
+		} catch (error) {
+			console.log('Erro ao buscar produtos.');
+			throw error;
+		}
 	}
 }

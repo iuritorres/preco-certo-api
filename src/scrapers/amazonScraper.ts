@@ -5,13 +5,8 @@ import { Scraper } from '../interfaces/scraper.js';
 export class AmazonScraper implements Scraper {
 	readonly baseUrl = StoresUrls.AMAZON;
 
-	async searchProduct(product: Product): Promise<Product> {
-		product.name;
-
-		return {
-			name: 'Teclado Mecânico Preto RGB Retroiluminado',
-			price: 250.09,
-			storeBaseURL: this.baseUrl,
-		};
+	async searchProduct(productData: { name: string }): Promise<Product> {
+		productData.name;
+		return null;
 	}
 }

@@ -10,10 +10,10 @@ export class ScrapingController implements ScrapingControllerInterface {
 	}
 
 	async searchProduct(request: Request, response: Response): Promise<void> {
-		const product = request.body;
+		const productData = request.body;
 
 		try {
-			const returnedProducts = await this.service.searchProduct(product);
+			const returnedProducts = await this.service.searchProduct(productData);
 
 			response.status(200).json({ message: returnedProducts });
 		} catch (error) {

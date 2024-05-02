@@ -3,7 +3,7 @@ import { ScrapingService } from '../services/scrapingService.js';
 
 export interface Scraper {
 	readonly baseUrl: string;
-	searchProduct: (product: Product) => Promise<Product>;
+	searchProduct: (productData: { name: string }) => Promise<Product>;
 }
 
 export interface ScrapingControllerInterface {

@@ -5,8 +5,8 @@ import { Scraper } from '../interfaces/scraper.js';
 export class ShopeeScraper implements Scraper {
 	readonly baseUrl = StoresUrls.SHOPEE;
 
-	async searchProduct(product: Product): Promise<Product> {
-		product.name;
+	async searchProduct(productData: { name: string }): Promise<Product> {
+		productData.name;
 		return null;
 	}
 }
