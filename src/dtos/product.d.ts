@@ -1,5 +1,9 @@
 export interface Product {
 	name: string;
 	price: number;
-	storeBaseURL: string;
+	url: string;
+	rating: {
+		count: number;
+		score: number;
+	};
 }
