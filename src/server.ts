@@ -1,8 +1,10 @@
 import express, { Router } from 'express';
 import { scrapingRouter } from './routes/scraping.js';
+import cors from 'cors';
 
 export const server = express();
 server.use(express.json());
+server.use(cors());
 
 // Routers
 const mainRouter = Router();

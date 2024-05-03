@@ -15,7 +15,7 @@ export class ScrapingController implements ScrapingControllerInterface {
 		try {
 			const returnedProducts = await this.service.searchProduct(productData);
 
-			response.status(200).json({ message: returnedProducts });
+			response.status(200).json({ products: returnedProducts });
 		} catch (error) {
 			console.error(error);
 			response.status(500).json({ message: 'Internal Server Error' });

@@ -71,8 +71,11 @@ export class MagazineLuizaScraper implements Scraper {
 		try {
 			const formattedProductName = productData.name
 				.toLowerCase()
+				.replace('/', '')
+				.replace('\\', '')
 				.replace('-', '')
-				.replace(' ', '%2B');
+				.replace('_', '')
+				.replaceAll(' ', '%2B');
 
 			const requestURL = `${this.baseUrl}/_next/data/acHHjHhw1lbQAs_d190V1/busca/${formattedProductName}.json?path1=${formattedProductName}`;
 			const cookieHeader =
@@ -93,7 +96,7 @@ export class MagazineLuizaScraper implements Scraper {
 			const product: Product = {
 				name: firstProductResult.title,
 				price: parseFloat(firstProductResult.price.bestPrice),
-				url: `${this.baseUrl}/${firstProductResult.path}`,
+				url: `https://www.magazinevoce.com.br/magazineextprecocerto/${firstProductResult.path}`,
 				rating: {
 					count: firstProductResult.rating.count,
 					score: firstProductResult.rating.score,

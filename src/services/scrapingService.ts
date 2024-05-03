@@ -19,7 +19,7 @@ export class ScrapingService implements ScrapingServiceInterface {
 			const notNullProducts = products.filter((product) => product !== null);
 			return notNullProducts;
 		} catch (error) {
-			console.log('Erro ao buscar produtos.');
+			console.error('Erro ao buscar produtos.');
 			throw error;
 		}
 	}
