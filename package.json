@@ -12,10 +12,10 @@
 		"postinstall": "npm run prepare",
 		"prepare": "husky",
 		"dev:ts": "tsc -w",
-		"dev:js": "nodemon --env-file=.development.env",
+		"dev:js": "nodemon --env-file=.env",
 		"dev": "concurrently npm:dev:*",
 		"prestart": "tsc",
-		"start": "node --env-file=.production.env dist/server.js"
+		"start": "node --env-file=.env dist/server.js"
 	},
 	"dependencies": {
 		"cors": "^2.8.5",
